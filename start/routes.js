@@ -15,5 +15,10 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const DetikController = require('../app/Controllers/Http/DetikController');
 
-Route.on('/').render('welcome')
+Route.get('/', () => {
+    return { greeting: 'Welcome' }
+  })
+
+Route.get('/detik', 'DetikController.getData');
